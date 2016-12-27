@@ -7,9 +7,12 @@
  * Outputs:     There are no outputs
  ******************************************************************************/
 
+#include <Keyboard.h>
+
 #define DEBOUNCE_DELAY 10 //In milliseconds
 
 const byte PIN_SPLIT = 10; // PIN for display toggle
+int pinState;
 int pinSplitLast = HIGH;
 
 
