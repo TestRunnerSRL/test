@@ -2,16 +2,17 @@
  * Program:     Arduino - Timer Pedal
  * Author:      TestRunner
  * Description: This program is used for the Arduino for the timer controls.
- *              This will send key presses to the PC to control the main timer.
+ *              The Arduino will register a Joystick and send button presses
+ *              to the PC for stopping and starting the main timer.
  * Inputs:      There is 1 button for starting/stopping the timer
- * Outputs:     There are no outputs
+ * Outputs:     USB HID Joystick
  ******************************************************************************/
 
-#include <Keyboard.h>
+#include <Joystick.h>
 
 #define DEBOUNCE_DELAY 10 //In milliseconds
 
-const byte PIN_SPLIT = 10; // PIN for display toggle
+const byte PIN_SPLIT = 8; // PIN for display toggle
 int pinState;
 int pinSplitLast = HIGH;
 
@@ -35,7 +36,7 @@ void deBounce(int buttonPin, int state)
 void setup() {
 	// Initialize the pinModes
 	pinMode(PIN_SPLIT, INPUT_PULLUP);
-  Keyboard.begin();
+  Joystick.begin();
 }
 
 // Runs repeatedly in a loop. Handles the UI and Display.
@@ -50,7 +51,9 @@ void loop() {
 
 		if (pinState == LOW) {
 			// Press (FALLING EDGE)
-			Keyboard.write('X');
+			Joystick.buttonDown(0);
+		} else {
+      Joystick.buttonUp(0);
 		}
 	}
 }

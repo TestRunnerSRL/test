@@ -1,0 +1,40 @@
+#######################################
+# Syntax Coloring Map For Joystick
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Joystick	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+buttonUp	KEYWORD2
+buttonDown	KEYWORD2
+buttonPress	KEYWORD2
+axisSet	KEYWORD2
+axisReset	KEYWORD2
+releaseAll	KEYWORD2
+
+  enum Axis {
+    X, Y, Z, Xrot, Yrot, Zrot, Throttle, Rudder, Hat1, Hat2
+  };
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+AXIS_X	LITERAL1
+AXIS_Y	LITERAL1
+AXIS_Z	LITERAL1
+AXIS_Xrot	LITERAL1
+AXIS_Yrot	LITERAL1
+AXIS_Zrot	LITERAL1
+AXIS_Throttle	LITERAL1
+AXIS_Rudder	LITERAL1
+AXIS_Hat1	LITERAL1
+AXIS_Hat2	LITERAL1
